@@ -1,0 +1,17 @@
+<h1>Log In</h1>
+
+<% if flash %>
+  <% flash.each do |name, message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+<form  action="<%= session_url %>" method="post">
+    <input type="hidden" name="authenticity_token"
+      value=" <%=form_authenticity_token %>">
+    <label for="user_name">User Name</label>
+    <input type="text" name="user[user_name]">
+    <label for="password">Password</label>
+    <input type="password" name="user[password]">
+    <input type="submit" value="Log In">
+</form>
